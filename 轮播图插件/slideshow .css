@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    /*图片与图片之间有空隙，通块font-size可以去掉
+    /*图片与图片之间有空隙，通块font-size可以去掉；
     因为img标签默认是inline-block，文本元素默认有空格。
     */
     /*font-size: 0;*/
