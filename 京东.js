@@ -5,13 +5,11 @@ $("#swiper").sliderImg({
 });
 
 /*下拉动画部分*/
-//这个index要写为全局变量，不然其它函数内部接收不到。记得做个试验。
 var index;
 //$(selector).hover(inFunction,outFunction)
 $(".categor-unit").hover(function () {
     $(".tabs-gather").css("display","block");
     index = $(this).attr("data-index");
-    //原来还可以这么写啊，这个选择器，得要打上空格
     $("#tabs-" + index).css("display","block").html(index);
     console.log(index);
 },function () {
@@ -28,20 +26,15 @@ $(".tabs-gather").mouseover(function () {
 
 //右侧滑动动画
 $(".slide-toggle").hover(function () {
-    //滑出
     $(".content-area").slideUp();
-    //滑入
     $(".slide-content").slideDown();
-    //切换选项卡
     var id = $(this).attr("id");
     $("." + id + "-tab").addClass("active").siblings().removeClass("active");
-    //选项卡内容
     $("." + id + "-content").show()
 });
 
 $(".header span").hover(function () {
     $(this).addClass("active").siblings().removeClass("active");
-    //选项卡内容
     $("." + $(this).attr("data") + "-content").show().siblings(".tabs-content").hide();
 });
 
@@ -202,5 +195,3 @@ $("#location").areaList({
     color:"#999",
     nowItemImg:"image/local.jpg"
 });
-
-//导航条下拉列表插件
