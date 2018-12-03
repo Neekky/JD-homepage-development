@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*图片与图片之间有空隙，通块font-size可以去掉
+    因为img标签默认是inline-block，文本元素默认有空格。
+    */
+    /*font-size: 0;*/
+}
+#swiper{
+    position: relative;
+    /*margin: 100px auto;*/
+    overflow: hidden;
+}
+#swiper .imgBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*width: 3350px;*/
+    float: left;
+}
+#swiper .imgBox li{
+    display: inline-block;
+}
+#swiper .imgBox li img{
+    width:100%;
+    height:100%;
+}
+#swiper .btn{
+    width:100%;
+    position: absolute;
+    top: 50%;
+    /*border: 1px solid black;*/
+    display: none;
+}
+#swiper .btn a{
+    position: absolute;
+    width: 35px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.5);
+    text-align:center;
+    margin-top: -15px;
+}
+#swiper .btn a.prevBtn{
+    left: 0;
+    border-radius: 0 50% 50% 0;
+}
+#swiper .btn a.nextBtn{
+    right: 0;
+    border-radius: 50% 0 0 50%;
+}
+#swiper .btn a span{
+    /* 需要设置宽度高度并且居中，所以inline-block*/
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    font-size: 20px;
+    /*margin-top: 5px;*/
+    color:#fff;
+}
+/*.wrapper .btn a.prevBtn span{*/
+    /*background-position: -200px -97px;*/
+/*}*/
+/*.wrapper .btn a.nextBtn span{*/
+    /*background-position: -200px -117px;*/
+/*}*/
+#swiper .order{
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+#swiper .order ul{
+    display: inline-block;
+    background-color: rgba(255,100,0,0.5);
+    padding: 3px;
+    border-radius: 8px;
+}
+#swiper .order ul li{
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    margin: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+#swiper .order ul li.active{
+    background-color: red;
+}
