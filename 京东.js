@@ -1,0 +1,333 @@
+//轮播图插件
+$("#swiper").sliderImg({
+    image:["image/pic1.jpg","image/pic2.jpg","image/pic3.jpg"],
+    interval:2500
+});
+
+/*下拉动画部分*/
+//这个index要写为全局变量，不然其它函数内部接收不到。记得做个试验。
+var index;
+//$(selector).hover(inFunction,outFunction)
+$(".categor-unit").hover(function () {
+    $(".tabs-gather").css("display","block");
+    index = $(this).attr("data-index");
+    //原来还可以这么写啊，这个选择器，得要打上空格
+    $("#tabs-" + index).css("display","block").html(index);
+    console.log(index);
+},function () {
+    $(".tabs-gather").css("display","none");
+    $("#tabs-" + index).css("display","none");
+});
+$(".tabs-gather").mouseover(function () {
+    $(this).css("display","block");
+    $("#tabs-" + index).css("display","block");
+}).mouseout(function () {
+    $(".tabs-gather").css("display","none");
+    $("#tabs-" + index).css("display","none");
+});
+
+//右侧滑动动画
+$(".slide-toggle").hover(function () {
+    //滑出
+    $(".content-area").slideUp();
+    //滑入
+    // $(".slide-content").slideDown();
+    //切换选项卡
+    var id = $(this).attr("id");
+    $("." + id + "-tab").addClass("active").siblings().removeClass("active");
+    //选项卡内容
+    $("." + id + "-content").show()
+});
+
+$(".header span").hover(function () {
+    $(this).addClass("active").siblings().removeClass("active");
+    //选项卡内容
+    $("." + $(this).attr("data") + "-content").show().siblings(".tabs-content").hide();
+});
+
+//按钮关闭功能
+$(".close").click(function () {
+    $(".content-area").slideDown();
+    //滑入
+    $(".slide-content").slideDown();
+});
+
+//城市信息插件
+$("#location").areaList({
+    items:[{
+        name:"北京",
+        href:"#"
+    },
+    {
+        name:"上海",
+        href:"#"
+    },
+    {
+        name:"天津",
+        href:"#"
+    },
+    {
+        name:"重庆",
+        href:"#"
+    },
+    {
+        name:"河北",
+        href:"#"
+    },
+    {
+        name:"山西",
+        href:"#"
+    },
+    {
+        name:"河南",
+        href:"#"
+    },
+    {
+        name:"辽宁",
+        href:"#"
+    },
+    {
+        name:"吉林",
+        href:"#"
+    },
+    {
+        name:"黑龙江",
+        href:"#"
+    },
+    {
+        name:"内蒙古",
+        href:"#"
+    },
+    {
+        name:"江苏",
+        href:"#"
+    },
+    {
+        name:"山东",
+        href:"#"
+    },
+    {
+        name:"安徽",
+        href:"#"
+    },
+    {
+        name:"浙江",
+        href:"#"
+    },
+    {
+        name:"福建",
+        href:"#"
+    },
+    {
+        name:"湖北",
+        href:"#"
+    },
+    {
+        name:"湖南",
+        href:"#"
+    },
+    {
+        name:"广东",
+        href:"#"
+    },
+    {
+        name:"广西",
+        href:"#"
+    },
+    {
+        name:"江西",
+        href:"#"
+    },
+    {
+        name:"四川",
+        href:"#"
+    },
+    {
+        name:"海南",
+        href:"#"
+    },
+    {
+        name:"贵州",
+        href:"#"
+    },
+    {
+        name:"云南",
+        href:"#"
+    },
+    {
+        name:"西藏",
+        href:"#"
+    },
+    {
+        name:"陕西",
+        href:"#"
+    },
+    {
+        name:"甘肃",
+        href:"#"
+    },
+    {
+        name:"青海",
+        href:"#"
+    },
+    {
+        name:"宁夏",
+        href:"#"
+    },
+    {
+        name:"新疆",
+        href:"#"
+    },
+    {
+        name:"港澳",
+        href:"#"
+    },
+    {
+        name:"台湾",
+        href:"#"
+    },
+    {
+        name:"钓鱼岛",
+        href:"#"
+    },
+    {
+        name:"海外",
+        href:"#"
+    }],
+    //每一行显示城市数量
+    rowNum: 5,
+    //默认显示值
+    nowItem: "北京",
+
+    color:"#999",
+    nowItemImg:"image/local.jpg"
+});
+
+//导航条下拉列表插件
+// 我的京东
+$("#myjd").dropdownList({
+    direction:"y",
+    colNum:2,
+    menuList:[
+        {
+        // title:"1",
+        items:[
+            {href:"#",name:"待处理订单"},
+            {href:"#",name:"返修退换货"},
+            {href:"#",name:"降价商品"},
+            {href:"#",name:"消息"},
+            {href:"#",name:"我的问答"},
+            {href:"#",name:"我的关注"}]
+        },
+        {
+        // title:"2",
+        items:[
+            {href:"#",name:"我的京豆"},
+            {href:"#",name:"我的白条"},
+            {href:"#",name:"我的优惠券"},
+            {href:"#",name:"我的理财"}]
+        }]
+});
+
+// 网站导航
+$("#nav").dropdownList({
+    direction:"x",
+    colNum:3,
+    menuList:[
+        {
+        title:"特色主题",
+        items:[
+            {href:"#",name:"京东试用"},
+            {href:"#",name:"京东金融"},
+            {href:"#",name:"全球售"},
+            {href:"#",name:"国际站"},
+            {href:"#",name:"京东会员"},
+            {href:"#",name:"京东预售"},
+            {href:"#",name:"买什么"},
+            {href:"#",name:"俄语站"},
+            {href:"#",name:"装机大师"},
+            {href:"#",name:"0元评测"},
+            {href:"#",name:"定期送"},
+            {href:"#",name:"港澳售"},
+            {href:"#",name:"优惠券"},
+            {href:"#",name:"秒杀"},
+            {href:"#",name:"闪购"},
+            {href:"#",name:"印尼站"},
+            {href:"#",name:"京东金融科技"},
+            {href:"#",name:"出海招商"},]
+        },
+        {
+        title:"生活服务",
+        items:[
+            {href:"#",name:"京东众筹"},
+            {href:"#",name:"白条"},
+            {href:"#",name:"京东金融App"},
+            {href:"#",name:"京东小金库"},
+            {href:"#",name:"理财"},
+            {href:"#",name:"话费"},
+            {href:"#",name:"水电煤"},
+            {href:"#",name:"彩票"},
+            {href:"#",name:"旅行"},
+            {href:"#",name:"机票酒店"},
+            {href:"#",name:"电影票"},
+            {href:"#",name:"京东到家"},
+            {href:"#",name:"游戏"},]
+        },
+        {
+        title:"更多精选",
+        items:[
+            {href:"#",name:"合作招商"},
+            {href:"#",name:"京东通信"},
+            {href:"#",name:"京东E卡"},
+            {href:"#",name:"企业采购"},
+            {href:"#",name:"服务市场"},
+            {href:"#",name:"办公生活馆"},
+            {href:"#",name:"乡村招募"},
+            {href:"#",name:"校园加盟"},
+            {href:"#",name:"京友邦"},
+            {href:"#",name:"京东社区"},
+            {href:"#",name:"游戏社区"},
+            {href:"#",name:"知识产权维权"}]
+        }]
+});
+//客户服务
+$("#cusService").dropdownList({
+    direction:"y",
+    colNum:2,
+    menuList:[
+        {
+        title:"客户",
+        items:[
+            {href:"#",name:"帮助中心"},
+            {href:"#",name:"售后服务"},
+            {href:"#",name:"在线客服"},
+            {href:"#",name:"意见建议"},
+            {href:"#",name:"电话客服"},
+            {href:"#",name:"客服邮箱"},
+            {href:"#",name:"金融咨询"},
+            {href:"#",name:"全球售客服"}
+        ]},
+        {
+        title:"商户",
+        items:[
+            {href:"#",name:"合作招商"},
+            {href:"#",name:"学习中心"},
+            {href:"#",name:"商家后台"},
+            {href:"#",name:"京麦工作台"},
+            {href:"#",name:"商家帮助"},
+            {href:"#",name:"规则平台"}]
+        }]
+});
+//企业采购
+$("#purchase").dropdownList({
+    direction:"y",
+    colNum:2,
+    menuList:[
+        {
+        items:[
+            {href:"#",name:"企业购"},
+            {href:"#",name:"商用场景馆"},
+            {href:"#",name:"工业品"},
+            {href:"#",name:"礼品卡"}]
+        }]
+});
