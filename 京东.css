@@ -1,0 +1,653 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+ul li{
+    list-style: none;
+}
+body{
+    font-size: 12px;
+}
+.wrapper{
+    min-width: 1190px;
+    background-color: #f0f3ef;
+}
+/*顶部导航栏部分*/
+.wrapper .shortcut{
+    width: 100%;
+    height: 30px;
+    /*border: 1px solid #000;*/
+    background-color: #e3e4e5;
+}
+.wrapper .shortcut .w{
+    width: 1190px;
+    height: 100%;
+    margin: 0 auto;
+    /*border: 1px solid #000;*/
+}
+.wrapper .shortcut .w .left{
+    width: 258px;
+    height: 100%;
+    /*border: 1px solid #000;*/
+    float: left;
+}
+.wrapper .shortcut .w .right{
+    float: right;
+}
+.wrapper .shortcut .w .right ul li{
+    float: left;
+    margin: 0px 2px 0 2px;
+    line-height: 27px;
+    position: relative;
+    padding:0 5px;
+    color: #999;
+}
+.wrapper .shortcut .w .right ul li a{
+    color: #999;
+}
+.wrapper .shortcut .w .right ul li a:hover,
+.wrapper .shortcut .w .right ul li:active a{
+    color: red;
+}
+.wrapper .shortcut .w .right ul li span{
+    color: red;
+    cursor: pointer;
+}
+.wrapper .shortcut .w .right ul li .bgpic{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 100% 100%;
+
+}
+.wrapper .shortcut .w .right ul li .drop-xsj{
+    background-image: url("image/xsj.png");
+}
+/*搜索区域*/
+.wrapper .header{
+    width: 100%;
+    height: 140px;
+    /*border-bottom: 1px solid #000;*/
+}
+.wrapper .header .con{
+    width: 1190px;
+    height: 100%;
+    margin: 0 auto;
+    /*border: 1px solid #000;*/
+    position: relative;
+}
+.wrapper .header .con .logo{
+    width: 193px;
+    height: 171px;
+    position: absolute;
+    top: -30px;
+    background: url("image/logo.png");
+    background-position:center center;
+    background-color: #fff;
+    box-shadow: 0 -12px 10px rgba(0,0,0,.2);
+    border-bottom: 1px solid #ededed;
+    background-size: 100% 100%;
+}
+.wrapper .header .con .header-right{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid red;*/
+}
+.header .search{
+    height: 35px;
+    width: 520px;
+    display: inline-block;
+    background: rgba(104,105,100,0.5);
+    position: absolute;
+    left: 270px;
+    top: 25px;
+}
+.header .shopping{
+    width: 190px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #e3e4e5;
+    display: inline-block;
+    position: absolute;
+    right: 150px;
+    top: 25px;
+    text-align: center;
+    background-color: #fff;
+    color: red;
+    font-size: 15px;
+}
+.header .hotwords{
+    width: 500px;
+    height: 20px;
+    /*border: 1px solid #f00;*/
+    position: absolute;
+    top: 70px;
+    left: 270px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.header .hotwords a:hover{
+    color: red;
+}
+.header .navitems{
+    position: absolute;
+    left: 190px;
+    bottom: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 791px;
+    /*border: 1px solid #f00;*/
+}
+#navitems-group1 a:hover,
+#navitems-group2 a:hover,
+#navitems-group3 a:hover{
+    color: red;
+}
+.header .navitems .spacer{
+    overflow: hidden;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: -10px;
+    width: 1px;
+    height: 10px;
+    float: left;
+    background-color: #ccc;
+}
+.header .navitems .levelup{
+    position: absolute;
+    top: -5px;
+    margin-left: 35px;
+    width: 42px;
+    height: 15px;
+}
+/*二维码*/
+.wrapper .right .code{
+    position: absolute;
+    left: -11px;
+    width: 66px;
+    height: 66px;
+    top: 30px;
+    border: 1px solid #cfcfcf;
+}
+.wrapper .right .code .code-img{
+    background: url("image/code.png");
+    background-size: 100% 100%;
+    width: 60px;
+    height: 60px;
+    margin: 4px auto;
+}
+.wrapper .right .code:before{
+    content: "";
+    position: absolute;
+    display: block;
+    top: -9px;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #e4e4e4 #e4e4e4 #f6f6f6;
+}
+/*搜索栏部分*/
+.header .search .sj-input{
+    /*vertical-align: top;*/
+    text-indent: 10px;
+    display: inline-block;
+    height: 35px;
+    width: 420px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    /*取消外侧蓝色边框*/
+    outline:none;
+}
+.header .search .cj-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    width: 100px;
+    height: 35px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    color: rgb(255,255,255);
+    outline: none;
+    cursor: pointer;
+    background-color: red;
+}
+.shopping i{
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: red;
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    margin-top: 5px;
+    margin-left: 4px;
+    position: absolute;
+}
+/*搜索框下商品*/
+.hotwords{
+    width: 500px;
+    height: 20px;
+    position: absolute;
+    top: 70px;
+    left: 270px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.hotwords a.red{
+    width: 70px;
+    color: red;
+}
+.hotwords a{
+    display:inline-block;
+    margin-right: 5px;
+    white-space: nowrap;
+    color: #999;
+}
+/*秒杀*/
+.navitems ul{
+    float: left;
+}
+.navitems ul li{
+    float: left;
+    margin-left: 30px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+/*主页内容展示区域*/
+.wrapper .content{
+    width: 100%;
+    height: 600px;
+    /*border: 1px solid #000;*/
+}
+.wrapper .content .con{
+    width: 1190px;
+    height: 600px;
+    /*border: 1px solid #000;*/
+    margin: 0 auto;
+}
+.wrapper .content .menu{
+    width: 190px;
+    height: 480px;
+    background: #fff;
+    float: left;
+    margin-right: 10px;
+    border-top: 1px solid #e3e4e5;
+    position: relative;
+}
+.wrapper .content .menu .goods-categor{
+    padding: 6px 0;
+    height: 468px;
+    background-color: #fefefe;
+    color: #636363;
+}
+.wrapper .content .menu .goods-categor li{
+    height: 26px;
+    line-height: 26px;
+    padding-left: 18px;
+}
+.wrapper .content .menu .goods-categor li:hover{
+    transition: background-color .5s ease;
+    background-color: #d9d9d9;
+}
+.wrapper .content .menu .goods-categor li a{
+    font-size: 14px;
+    color: #626262;
+}
+.wrapper .content .menu .goods-categor li a:hover{
+    color: red;
+}
+/*一级联动菜单栏*/
+.wrapper .content .menu .tabs-gather{
+    position: absolute;
+    width: 798px;
+    left: 190px;
+    top: 0;
+    background: #fff;
+    min-height: 478px;
+    border: 1px solid #f7f7f7;
+    box-shadow: 2px 0 5px rgba(0,0,0,.3);
+    z-index: 5;
+    display: none;
+}
+.wrapper .content .menu .tabs-gather .tabs-unit{
+    padding: 20px 0 10px;
+    /*border: 1px solid #000;*/
+    display: none;
+}
+/*轮播图*/
+.wrapper .content .slider{
+    position: relative;
+    width: 590px;
+    height: 470px;
+    background: salmon;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+/*轮播图旁三图片*/
+.content .ad{
+    width: 190px;
+    height: 480px;
+    float: left;
+    margin-right: 8px;
+}
+.content .ad div{
+    width: 190px;
+    height: 150px;
+    margin-top: 5px;
+    margin-top: 10px;
+}
+.content .ad div img{
+    width: 100%;
+    height: 100%;
+}
+/*京东用户登陆部分*/
+.wrapper .content .user{
+    float: right;
+    width: 190px;
+    height: 480px;
+    /*border: 1px solid #000;*/
+}
+.wrapper .content .user .user-register{
+    height: 150px;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    margin-top: 10px;
+    /*border: 1px solid #000;*/
+}
+.wrapper .content .user .user-register .head-portrait{
+    position: absolute;
+    left: 50%;
+    top: -10%;
+    margin-left: -34px;
+    width: 65px;
+    height: 65px;
+}
+.wrapper .content .user .user-register .head-portrait .userphoto{
+    width: 55px;
+    height: 55px;
+    border: 5px solid #e3e1df;
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    box-shadow: 3px 6px 25px #c3c3c3;
+}
+.wrapper .content .user .user-register .head-portrait .userphoto img{
+    width: 55px;
+    height: 55px;
+}
+.wrapper .content .user .user-register .user-login{
+    padding: 0 10px;
+    height: 40px;
+    padding-top: 62px;
+}
+.wrapper .content .user .user-register .user-login .welcome{
+    line-height: 20px;
+    width: 100%;
+    /*规定段落中的文本不进行换行：*/
+    white-space: nowrap;
+    overflow: hidden;
+    /*溢出文字显示为...  必须配合overflow:hidden; white-space:nowrap;*/
+    text-overflow: ellipsis;
+    color: #888;
+}
+.wrapper .content .user .user-register .user-login a{
+    padding: 0 2px;
+    color: #666;
+}
+.wrapper .content .user .user-register .user-login a:hover{
+    color: red;
+}
+.wrapper .content .user .benefit{
+    margin-top: 10px;
+    height: 25px;
+    font-size: 0;
+    /*border: 1px solid #000;*/
+}
+.wrapper .content .user .benefit .benefit-newman{
+    display: inline-block;
+    margin: 0 5px;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    text-align: center;
+    color: #e43f3b;
+    box-shadow: 6px 8px 20px rgba(45,45,45,.15);
+    border-radius: 25px;
+}
+.wrapper .content .user .benefit .benefit-newman:hover{
+    transition: background .3s ease,color .3s ease;
+    background-color: #e43f3b;
+    color: #fff;
+}
+.wrapper .content .user .benefit .benefit-vip{
+    display: inline-block;
+    margin: 0 5px;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 25px;
+    background: #363634;
+    color: #e5d790;
+    box-shadow: 6px 8px 20px rgba(45,45,45,.15);
+}
+.wrapper .content .user .benefit .benefit-vip:hover{
+    transition: background .3s ease,color .3s ease;
+    background-color: #e43f3b;
+    color: #fff;
+}
+/*京东快报部分*/
+.wrapper .content .user .jd-news{
+    height: 130px;
+    background: #fff;
+}
+.wrapper .content .user .jd-news .news-header{
+    padding: 8px 0 0;
+    position: relative;
+    line-height: 13px;
+
+}
+.wrapper .content .user .jd-news .news-header h5{
+    font-size: 13px;
+    margin-left: 15px;
+    color: #666;
+    font-weight: bold;
+}
+.wrapper .content .user .jd-news .news-header a{
+    font-size: 12px;
+    color: #666;
+    right: 12px;
+    top: 8px;
+    position: absolute;
+}
+.wrapper .content .user .jd-news .news-header a:hover{
+    color:#e43f3b;
+}
+/*京东快报新闻条部分*/
+.wrapper .content .user .jd-news .news-table{
+    position: relative;
+    padding-top: 8px;
+    margin: 0 15px;
+    height: 88px;
+}
+.wrapper .content .user .jd-news .news-table .news-item{
+    line-height: 22px;
+    max-width: 160px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #999;
+}
+.wrapper .content .user .jd-news .news-table .news-item:hover{
+    color:#e43f3b;
+}
+.wrapper .content .user .jd-news .news-table .news-item .style1{
+    color: #8c9fac;
+    border-left-color: #8c9fac;
+    font-size: 12px;
+    height: 12px;
+    width: 30px;
+    line-height: 12px;
+    vertical-align: 0;
+    font-weight: bold;
+    border-left: 3px solid #8c9fac;
+    padding-left: 5px;
+}
+.wrapper .content .user .jd-news .news-table .news-item .style2{
+    color: #be996d;
+    border-left-color: #be996d;
+    font-size: 12px;
+    height: 12px;
+    width: 30px;
+    line-height: 12px;
+    vertical-align: 0;
+    font-weight: bold;
+    border-left: 3px solid #be996d;
+    padding-left: 5px;
+}
+.wrapper .content .user .jd-news .news-table .news-item .style3{
+    color: #d59494;
+    border-left-color: #d59494;
+    font-size: 12px;
+    height: 12px;
+    width: 30px;
+    line-height: 12px;
+    vertical-align: 0;
+    font-weight: bold;
+    border-left: 3px solid #d59494;
+    padding-left: 5px;
+}
+.wrapper .content .user .jd-news .news-table .news-item .style4{
+    color: #d59494;
+    border-left-color: #d59494;
+    font-size: 12px;
+    height: 12px;
+    width: 30px;
+    line-height: 12px;
+    vertical-align: 0;
+    font-weight: bold;
+    border-left: 3px solid #d59494;
+    padding-left: 5px;
+}
+/*京东服务部分*/
+.wrapper .content .user .life-service{
+    position: relative;
+    height: 194px;
+    overflow: hidden;
+    /*border:1px solid #000;*/
+}
+.wrapper .content .user .life-service:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 160px;
+    left: 15px;
+    height: 1px;
+    background: #ebeaea;
+    z-index: 1;
+}
+.wrapper .content .user .life-service .content-area{
+    /*overflow: hidden;*/
+    padding: 18px 17px 11px;
+    background: #fff;
+}
+.wrapper .content .user .life-service .content-area ul{
+    height: 165px;
+    overflow: hidden;
+}
+.wrapper .content .user .life-service .content-area ul li{
+    float: left;
+    width: 39px;
+    height: 55px;
+    background: #fff;
+    text-align: center;
+    /*border:1px solid #000;*/
+    overflow: hidden;
+
+}
+/*滑动展示区*/
+.wrapper .content .user .life-service .slide-content{
+    width: 100%;
+    height: 180px;
+    background-color: #fff;
+    /*top:200px;*/
+    position: absolute;
+}
+.wrapper .content .user .life-service .slide-content .tabs-content{
+    position: relative;
+    z-index: 1;
+    width: 168px;
+    height: 180px;
+    padding: 0 15px;
+    background-color: #fff;
+}
+.wrapper .content .user .life-service .slide-content .close{
+    position: absolute;
+    right: 21px;
+    top: 22px;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    text-align: center;
+    z-index: 3;
+    font-size: 16px;
+    color: #666;
+    font-weight: 300;
+
+}
+.wrapper .content .user .life-service .slide-content .close:hover{
+    background-color: #ddd;
+    color: #c81623;
+}
+.wrapper .content .user .life-service .slide-content .active{
+    color: #e01121;
+    border-bottom-color: #e01121;
+    border-bottom: 2px solid;
+
+}
+.wrapper .content .user .life-service .slide-content .equale{
+    height: 14px;
+    width: 40px;
+    line-height: 14px;
+    display: inline-block;
+    padding-bottom: 4px;
+    text-align: center;
+}
+.wrapper .content .user .life-service .slide-content .tabs-content{
+    position: relative;
+    z-index: 1;
+    width: 168px;
+    height: 180px;
+    padding: 0 15px;
+    background-color: #fff;
+    top: -110px;
+    /*border: 1px solid #000;*/
+    display: none;
+}
+#location{
+    float: right;
+    width: 70px;
+    height: 100%;
+    /*border: 1px solid #000;*/
+}
