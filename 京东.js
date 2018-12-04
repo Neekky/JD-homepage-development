@@ -4,14 +4,12 @@ $("#swiper").sliderImg({
     interval:2500
 });
 
-/*下拉动画部分*/
-//这个index要写为全局变量，不然其它函数内部接收不到。记得做个试验。
+/*京东生活服务动画部分*/
 var index;
 //$(selector).hover(inFunction,outFunction)
 $(".categor-unit").hover(function () {
     $(".tabs-gather").css("display","block");
     index = $(this).attr("data-index");
-    //原来还可以这么写啊，这个选择器，得要打上空格
     $("#tabs-" + index).css("display","block").html(index);
     console.log(index);
 },function () {
