@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 a{
     text-decoration: none;
@@ -236,6 +237,25 @@ body{
     margin-top: 5px;
     margin-left: 4px;
     position: absolute;
+}
+.header .con .search .search-drop ul{
+    background: #fff;
+    z-index: 10;
+    position: absolute;
+    width: 420px;
+}
+.header .con .search .search-drop ul li{
+    overflow: hidden;
+    padding: 1px 6px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.header .con .search .search-drop ul li:hover{
+    background: #ccc;
+}
+.header .con .search .search-drop ul a{
+    color: #666;
+    font-size: 12px;
 }
 /*搜索框下商品*/
 .hotwords{
